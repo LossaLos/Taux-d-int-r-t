@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>randement Invest</title>
+        <link href="Taux.css" rel="stylesheet">
+        
+        
+</head>
+
+<body>
+    <div class="div1">
+        <p class="Calculer">Quelle sera le randement de votre investissement ?</p>
+        <form>
+            <label for="Montant">Montant (euro) :</label>
+            <input type="number" id="Montant" name="Montant">
+            <br>
+            <label for="Pourcent">Taux de randement (en pourcentage) :</label>
+            <input type="number" id="Pourcent" name="Pourcent">
+            <br>
+            <label for="Année">Nombre d'année :</label>
+            <input type="number" id="Année" name="Année">
+            <br>
+            <button class="button" type="button" onclick="calculeRandement()">Calcule le randement de votre investissement</button>
+            <p id="RDM1">  </p>
+            
+            
+            <script>function calculeRandement() {
+               
+                let Montant = document.getElementById("Montant").value;
+                let Pourcent = document.getElementById("Pourcent").value /100;
+                let Année = document.getElementById("Année").value;
+                
+                let rdm = Montant * Math.pow(1 + Pourcent, Année);                 
+
+                rdm = Math.round(rdm);
+                
+                let resultat = document.getElementById("RDM1");
+                      resultat.innerHTML = "Votre randement est de : " + rdm;
+            }</script>
+        </form>
+    </div>
+</body>
